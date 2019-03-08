@@ -1,0 +1,58 @@
+﻿  Building 'DriverUtil8' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Release\MyDriver.inf [Version] section with DriverVer=10/15/2016,20.40.56.936
+  Assembling idthook.asm...
+  Assembling pgDisable.asm...
+  Assembling pgDisableHooker.asm...
+  endian.c
+  inet.c
+  ksocket.c
+  ktdi.c
+  正在生成代码...
+  正在编译...
+  Device.cpp
+  distorm3.cpp
+  Driver.cpp
+  fnparse.cpp
+  HookX64.cpp
+  kernel_stl.cpp
+  log.cpp
+  Main.cpp
+  mem_util.cpp
+  NtFile.cpp
+  ntos_util.cpp
+  NtReg.cpp
+  nt_patchguard.cpp
+  PatchGuardPatch.cpp
+  stdcpp.cpp
+  test_util.cpp
+  typeinfo.cpp
+  util_idt.cpp
+  util_version.cpp
+  WinX.cpp
+  正在生成代码...
+  正在编译...
+  write_jmp.cpp
+  WskSocket.cpp
+  正在生成代码...
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+Driver.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+test_util.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+  DriverUtil8.vcxproj -> F:\逆向从入门到改行\Driver-10\DriverUtil8\x64\Release\DriverUtil8.sys
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-10\DriverUtil8\x64\Release\DriverUtil8.sys
+  
+  ..........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  F:\逆向从入门到改行\Driver-10\DriverUtil8\x64\Release\DriverUtil8\mydriver.cat
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-10\DriverUtil8\x64\Release\DriverUtil8\mydriver.cat
+  

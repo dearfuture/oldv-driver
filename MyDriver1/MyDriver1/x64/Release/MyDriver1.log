@@ -1,0 +1,41 @@
+﻿  Building 'MyDriver1' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Release\MyDriver.inf [Version] section with DriverVer=07/29/2016,21.37.22.294
+  Driver.cpp
+D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\algorithm(1015): warning C4242: “=”: 从“int”转换到“char”，可能丢失数据
+  D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\algorithm(1027): note: 参见对正在编译的函数 模板 实例化“_OutIt std::_Transform<char*,_OutIt,int(__cdecl *)(int)>(_InIt,_InIt,_OutIt,_Fn1)”的引用
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _InIt=char *,
+              _Fn1=int (__cdecl *)(int)
+          ]
+  Driver.cpp(60): note: 参见对正在编译的函数 模板 实例化“_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,int(__cdecl *)(int)>(_InIt,_InIt,_OutIt,_Fn1)”的引用
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Fn1=int (__cdecl *)(int)
+          ]
+  kernel_stl.cpp
+  Main.cpp
+  stdcpp.cpp
+  正在生成代码...
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+  MyDriver1.vcxproj -> F:\逆向从入门到改行\Driver-1\MyDriver1\x64\Release\MyDriver1.sys
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-1\MyDriver1\x64\Release\MyDriver1.sys
+  
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  F:\逆向从入门到改行\Driver-1\MyDriver1\x64\Release\MyDriver1\mydriver.cat
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-1\MyDriver1\x64\Release\MyDriver1\mydriver.cat
+  

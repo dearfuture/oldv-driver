@@ -1,0 +1,16 @@
+Inf2Cat Tool Output:
+FileTracker : error FTK1011: 未能创建新的文件跟踪日志文件: F:\逆向从入门到改行\Driver-11\DriverUtil9\DriverUtil9\x64\Release\DriverUtil9.tlog\inf2cat-expand.read.1.tlog。文件存在。
+
+
+
+.........................
+Signability test complete.
+
+Errors:
+None
+
+Warnings:
+None
+
+Catalog generation complete.
+F:\逆向从入门到改行\Driver-11\DriverUtil9\x64\Release\DriverUtil9\mydriver.cat

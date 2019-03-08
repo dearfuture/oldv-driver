@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4F23C6EC-1F53-46A8-9D36-1E2093A3E50B}</ProjectGuid>
+    <TemplateGuid>{dd38f7fc-d7bd-488b-9242-7d8754cde80d}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+    <RootNamespace>DriverUtil8</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <KMDF_VERSION_MAJOR>1</KMDF_VERSION_MAJOR>
+    <KMDF_VERSION_MINOR>11</KMDF_VERSION_MINOR>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <IncludePath>$(VC_IncludePath);$(IncludePath)</IncludePath>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <IncludePath>$(VC_IncludePath);$(KMDF_INC_PATH)$(KMDF_VER_PATH);$(IncludePath)</IncludePath>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <EntryPointSymbol>FxDriverEntryWorker</EntryPointSymbol>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>libcntpr.lib;wdm.lib;wdmsec.lib;aux_klib.lib;ntstrsafe.lib;Netio.lib;$(KMDF_LIB_PATH)$(KMDF_VER_PATH)\WdfLdr.lib;$(KMDF_LIB_PATH)$(KMDF_VER_PATH)\WdfDriverEntry.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>c:\symbols\$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>Base.h</PrecompiledHeaderFile>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>libcntpr.lib;wdm.lib;wdmsec.lib;aux_klib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>c:\symbols\$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Inf Include="MyDriver.inf" />
+  </ItemGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3rd\ksocket\endian.c" />
+    <ClCompile Include="3rd\ksocket\inet.c" />
+    <ClCompile Include="3rd\ksocket\ksocket.c" />
+    <ClCompile Include="3rd\ksocket\ktdi.c" />
+    <ClCompile Include="Device.cpp" />
+    <ClCompile Include="distorm3.cpp" />
+    <ClCompile Include="Driver.cpp" />
+    <ClCompile Include="fnparse.cpp" />
+    <ClCompile Include="HookX64.cpp" />
+    <ClCompile Include="kernel_stl.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="mem_util.cpp" />
+    <ClCompile Include="NtFile.cpp" />
+    <ClCompile Include="ntos_util.cpp" />
+    <ClCompile Include="NtReg.cpp" />
+    <ClCompile Include="nt_patchguard.cpp" />
+    <ClCompile Include="PatchGuardPatch.cpp" />
+    <ClCompile Include="stdcpp.cpp" />
+    <ClCompile Include="test_util.cpp" />
+    <ClCompile Include="typeinfo.cpp" />
+    <ClCompile Include="util_idt.cpp" />
+    <ClCompile Include="util_version.cpp" />
+    <ClCompile Include="WinX.cpp" />
+    <ClCompile Include="write_jmp.cpp" />
+    <ClCompile Include="WskSocket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3rd\ksocket\ksocket.h" />
+    <ClInclude Include="3rd\ksocket\ktdi.h" />
+    <ClInclude Include="asm.h" />
+    <ClInclude Include="Base.h" />
+    <ClInclude Include="CLog.h" />
+    <ClInclude Include="cpu_lock.h" />
+    <ClInclude Include="ddk_stdint.h" />
+    <ClInclude Include="Device.h" />
+    <ClInclude Include="distorm3.hpp" />
+    <ClInclude Include="dpc_util.h" />
+    <ClInclude Include="event.h" />
+    <ClInclude Include="fnparse.h" />
+    <ClInclude Include="HookX64.h" />
+    <ClInclude Include="http.h" />
+    <ClInclude Include="ioctrl.h" />
+    <ClInclude Include="kdblock_def.h" />
+    <ClInclude Include="kernel_stl.h" />
+    <ClInclude Include="mem_util.h" />
+    <ClInclude Include="mm_independ_scan.h" />
+    <ClInclude Include="mm_physical_scan.h" />
+    <ClInclude Include="native_func_def.h" />
+    <ClInclude Include="NtFile.h" />
+    <ClInclude Include="ntos.h" />
+    <ClInclude Include="ntos_func_def.h" />
+    <ClInclude Include="ntos_util.h" />
+    <ClInclude Include="NtReg.h" />
+    <ClInclude Include="nt_attach_filter.h" />
+    <ClInclude Include="nt_driver.h" />
+    <ClInclude Include="nt_image_callback.h" />
+    <ClInclude Include="nt_callback.h" />
+    <ClInclude Include="nt_irp_dispatch.h" />
+    <ClInclude Include="nt_irp_hook.h" />
+    <ClInclude Include="nt_object_callback.h" />
+    <ClInclude Include="nt_object_types.h" />
+    <ClInclude Include="nt_patchguard.h" />
+    <ClInclude Include="nt_pnp_callback.h" />
+    <ClInclude Include="nt_process_callback.h" />
+    <ClInclude Include="nt_regcmp_callback.h" />
+    <ClInclude Include="nt_thread_callback.h" />
+    <ClInclude Include="PgContext.h" />
+    <ClInclude Include="pte.h" />
+    <ClInclude Include="scope_exit.h" />
+    <ClInclude Include="lock.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="stdcpp.h" />
+    <ClInclude Include="tdi_socket.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="timer_ddk.h" />
+    <ClInclude Include="unique_resource.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="util_idt.h" />
+    <ClInclude Include="util_nt_file_system.h" />
+    <ClInclude Include="util_sleep.h" />
+    <ClInclude Include="util_symbols.h" />
+    <ClInclude Include="util_syscall.h" />
+    <ClInclude Include="util_time.h" />
+    <ClInclude Include="util_version.h" />
+    <ClInclude Include="wdf_base.h" />
+    <ClInclude Include="wdf_ioctrl.h" />
+    <ClInclude Include="win10_10586.h" />
+    <ClInclude Include="win10_14393.h" />
+    <ClInclude Include="win7_64.h" />
+    <ClInclude Include="win7_sp1_64.h" />
+    <ClInclude Include="win8_0_9200.h" />
+    <ClInclude Include="win8_1_9600.h" />
+    <ClInclude Include="WinX.h" />
+    <ClInclude Include="work_item.h" />
+    <ClInclude Include="write_jmp.h" />
+    <ClInclude Include="WskSocket.h" />
+    <ClInclude Include="wsk_socket.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="idthook.asm" />
+    <MASM Include="pgDisable.asm" />
+    <MASM Include="pgDisableHooker.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="common.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

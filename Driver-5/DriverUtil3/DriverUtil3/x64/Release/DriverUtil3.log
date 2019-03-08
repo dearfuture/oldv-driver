@@ -1,0 +1,36 @@
+﻿  Building 'DriverUtil3' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Release\MyDriver.inf [Version] section with DriverVer=09/09/2016,8.27.5.978
+  Device.cpp
+  Driver.cpp
+  kernel_stl.cpp
+  Main.cpp
+  mem_util.cpp
+  NtFile.cpp
+  NtReg.cpp
+  stdcpp.cpp
+  test_util.cpp
+  typeinfo.cpp
+  util_version.cpp
+  正在生成代码...
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+Driver.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+test_util.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+  DriverUtil3.vcxproj -> F:\逆向从入门到改行\Driver-5\DriverUtil3\x64\Release\DriverUtil3.sys
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-5\DriverUtil3\x64\Release\DriverUtil3.sys
+  
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  F:\逆向从入门到改行\Driver-5\DriverUtil3\x64\Release\DriverUtil3\mydriver.cat
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-5\DriverUtil3\x64\Release\DriverUtil3\mydriver.cat
+  

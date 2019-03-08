@@ -1,0 +1,32 @@
+;
+; MyDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=
+ClassGuid= {55E24AA1-5CA5-4544-A34C-22BBCFC2C8A4}
+Provider= 1
+DriverVer=
+CatalogFile= mydriver.cat
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+
+
+[Strings]
+ManufacturerName=""
+ClassName=""
+DiskName="MyDriver Source Disk"

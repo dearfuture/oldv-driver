@@ -1,0 +1,12 @@
+[Disks] 
+disk = "AOE DISK",\aoe.inf,\ 
+ 
+[Defaults] 
+scsi = AOE 
+ 
+[scsi] 
+AOE = "AoE Driver" 
+ 
+[Files.scsi.AOE] 
+driver = disk,aoe32.sys,AoE 
+inf = disk,aoe.inf 

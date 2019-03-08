@@ -1,0 +1,25 @@
+﻿  Building 'MyDriver_test' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Debug\MyDriver.inf [Version] section with DriverVer=07/29/2016,19.19.34.441
+  Driver.cpp
+  Main.cpp
+  kernel_stl.cpp
+  stdcpp.cpp
+  正在生成代码...
+  MyDriver_test.vcxproj -> F:\逆向从入门到改行\Driver-1\MyDriver_test\x64\Debug\MyDriver_test.sys
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-1\MyDriver_test\x64\Debug\MyDriver_test.sys
+  
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  F:\逆向从入门到改行\Driver-1\MyDriver_test\x64\Debug\MyDriver_test\mydriver.cat
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-1\MyDriver_test\x64\Debug\MyDriver_test\mydriver.cat
+  

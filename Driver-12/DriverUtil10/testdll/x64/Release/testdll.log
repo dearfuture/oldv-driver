@@ -1,0 +1,7 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  testdll.cpp
+  正在生成代码
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  testdll.vcxproj -> F:\逆向从入门到改行\Driver-12\DriverUtil10\x64\Release\testdll.dll

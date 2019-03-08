@@ -1,0 +1,90 @@
+;
+; WDF_Driver_Cpp.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=WDF_Driver_Cpp.cat
+DriverVer= ; TODO: set DriverVer in stampinf property pages
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+WDF_Driver_Cpp.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%WDF_Driver_Cpp.DeviceDesc%=WDF_Driver_Cpp_Device, Root\WDF_Driver_Cpp ; TODO: edit hw-id
+
+[WDF_Driver_Cpp_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+WDF_Driver_Cpp.sys
+
+;-------------- Service installation
+[WDF_Driver_Cpp_Device.NT.Services]
+AddService = WDF_Driver_Cpp,%SPSVCINST_ASSOCSERVICE%, WDF_Driver_Cpp_Service_Inst
+
+; -------------- WDF_Driver_Cpp driver install sections
+[WDF_Driver_Cpp_Service_Inst]
+DisplayName    = %WDF_Driver_Cpp.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\WDF_Driver_Cpp.sys
+
+;
+;--- WDF_Driver_Cpp_Device Coinstaller installation ------
+;
+
+[DestinationDirs]
+WDF_Driver_Cpp_Device_CoInstaller_CopyFiles = 11
+
+[WDF_Driver_Cpp_Device.NT.CoInstallers]
+AddReg=WDF_Driver_Cpp_Device_CoInstaller_AddReg
+CopyFiles=WDF_Driver_Cpp_Device_CoInstaller_CopyFiles
+
+[WDF_Driver_Cpp_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[WDF_Driver_Cpp_Device_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[SourceDisksFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
+
+[WDF_Driver_Cpp_Device.NT.Wdf]
+KmdfService =  WDF_Driver_Cpp, WDF_Driver_Cpp_wdfsect
+[WDF_Driver_Cpp_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "WDF_Driver_Cpp Installation Disk"
+WDF_Driver_Cpp.DeviceDesc = "WDF_Driver_Cpp Device"
+WDF_Driver_Cpp.SVCDESC = "WDF_Driver_Cpp Service"

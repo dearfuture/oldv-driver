@@ -1,0 +1,27 @@
+﻿  Building 'InvisableIrpHook' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Release\MyDriver.inf [Version] section with DriverVer=09/12/2016,7.53.40.757
+  HookX64.cpp
+  test_util.cpp
+  正在生成代码...
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+Driver.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+test_util.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+  InvisableIrpHook.vcxproj -> F:\逆向从入门到改行\Driver-6\InvisableIrpHook\x64\Release\InvisableIrpHook.sys
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-6\InvisableIrpHook\x64\Release\InvisableIrpHook.sys
+  
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  F:\逆向从入门到改行\Driver-6\InvisableIrpHook\x64\Release\InvisableIrpHook\mydriver.cat
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-6\InvisableIrpHook\x64\Release\InvisableIrpHook\mydriver.cat
+  

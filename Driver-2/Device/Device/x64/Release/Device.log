@@ -1,0 +1,24 @@
+﻿  Building 'Device' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Release\MyDriver.inf [Version] section with DriverVer=08/20/2016,21.3.17.969
+  Device.cpp
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+Driver.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+  Device.vcxproj -> F:\逆向从入门到改行\Driver-2\Device\x64\Release\Device.sys
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-2\Device\x64\Release\Device.sys
+  
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  F:\逆向从入门到改行\Driver-2\Device\x64\Release\Device\mydriver.cat
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-2\Device\x64\Release\Device\mydriver.cat
+  

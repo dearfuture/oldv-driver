@@ -1,0 +1,40 @@
+﻿  Building 'DriverUtil5' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Release\MyDriver.inf [Version] section with DriverVer=09/24/2016,20.20.9.420
+  Device.cpp
+  Driver.cpp
+  HookX64.cpp
+  Main.cpp
+  NtFile.cpp
+  NtReg.cpp
+  distorm3.cpp
+  kernel_stl.cpp
+  mem_util.cpp
+  ntos_util.cpp
+  stdcpp.cpp
+  test_util.cpp
+  util_idt.cpp
+  util_version.cpp
+  write_jmp.cpp
+  正在生成代码...
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+Driver.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+test_util.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+stdcpp.obj : warning LNK4210: 存在 .CRT 节；可能有未处理的静态初始值设定项或结束符
+  DriverUtil5.vcxproj -> F:\逆向从入门到改行\Driver-7\DriverUtil5\x64\Release\DriverUtil5.sys
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-7\DriverUtil5\x64\Release\DriverUtil5.sys
+  
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  F:\逆向从入门到改行\Driver-7\DriverUtil5\x64\Release\DriverUtil5\mydriver.cat
+  Done Adding Additional Store
+  Successfully signed: F:\\Driver-7\DriverUtil5\x64\Release\DriverUtil5\mydriver.cat
+  

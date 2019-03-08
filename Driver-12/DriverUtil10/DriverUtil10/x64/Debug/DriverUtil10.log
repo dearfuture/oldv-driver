@@ -1,0 +1,48 @@
+﻿  Building 'DriverUtil10' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Debug\MyDriver.inf [Version] section with DriverVer=10/25/2016,8.44.35.671
+  Assembling idthook.asm...
+  Assembling pgDisable.asm...
+  Assembling pgDisableHooker.asm...
+  decoder.c
+  distorm.c
+  instructions.c
+  insts.c
+  mnemonics.c
+  operands.c
+  prefix.c
+3rd\distorm\src\prefix.c(78): error C2063: “_PrefixIndexer”: 不是一个函数
+  textdefs.c
+  wstring.c
+  endian.c
+  inet.c
+  ksocket.c
+  ktdi.c
+  正在生成代码...
+  正在编译...
+  Device.cpp
+  distorm3.cpp
+  Driver.cpp
+  fnparse.cpp
+  HookX64.cpp
+  kernel_stl.cpp
+  log.cpp
+  Main.cpp
+  mem_util.cpp
+  NtFile.cpp
+  ntos_util.cpp
+  NtReg.cpp
+  nt_patchguard.cpp
+  PatchGuardPatch.cpp
+  stdcpp.cpp
+  tdi_fw.cpp
+tdi_fw.cpp(1888): error C2065: “pIrp”: 未声明的标识符
+tdi_fw.cpp(1888): error C2227: “->AssociatedIrp”的左边必须指向类/结构/联合/泛型类型
+  tdi_fw.cpp(1888): note: 类型是“unknown-type”
+tdi_fw.cpp(1888): error C2228: “.SystemBuffer”的左边必须有类/结构/联合
+  test_util.cpp
+  typeinfo.cpp
+  util_idt.cpp
+  util_version.cpp
+  正在生成代码...
+  正在编译...
+  WinX.cpp

@@ -1,0 +1,8 @@
+﻿  Building 'DriverUtil6' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Debug\MyDriver.inf [Version] section with DriverVer=09/13/2016,23.47.28.677
+  distorm3.cpp
+  HookX64.cpp
+  正在生成代码...
+test_util.obj : error LNK2019: 无法解析的外部符号 RtlStringValidateDestW，该符号在函数 RtlStringCchPrintfW 中被引用
+test_util.obj : error LNK2019: 无法解析的外部符号 RtlStringVPrintfWorkerW，该符号在函数 RtlStringCchPrintfW 中被引用
+F:\逆向从入门到改行\Driver-8\DriverUtil6\x64\Debug\DriverUtil6.sys : fatal error LNK1120: 2 个无法解析的外部命令

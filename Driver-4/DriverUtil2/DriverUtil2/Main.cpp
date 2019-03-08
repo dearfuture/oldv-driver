@@ -1,0 +1,53 @@
+#include "Base.h"
+
+_Use_decl_annotations_
+EXTERN_C
+NTSTATUS
+MainDriverEntry(
+	IN PDRIVER_OBJECT DriverObject,
+	IN PUNICODE_STRING RegistryPath);
+
+_Use_decl_annotations_
+EXTERN_C
+void
+UnLoad(
+	__in PDRIVER_OBJECT driverObject
+	);
+
+PDRIVER_OBJECT g_pDriverObject = nullptr;
+
+#define STATIC_DRIVER_OBJECT g_pDriverObject
+#define CPP_MAIN MainDriverEntry
+#define EPILOGUE UnLoad(STATIC_DRIVER_OBJECT);
+
+
+//---------------------------
+//-----   UNINSTALL   -------
+//---------------------------
+void
+OnUnload(
+	__in DRIVER_OBJECT* driverObject
+	)
+{
+	UNREFERENCED_PARAMETER(driverObject);
+	EPILOGUE
+	cc_doexit(0, 0, 0);//call dtors
+} // end OnUnload
+
+  //---------------------------
+  //------   INSTALL   --------
+  //---------------------------
+EXTERN_C
+NTSTATUS
+DriverEntry(
+	__in DRIVER_OBJECT* driverObject,
+	__in UNICODE_STRING* registryPath
+	)
+{
+	cc_init(0);
+
+	driverObject->DriverUnload = reinterpret_cast<DRIVER_UNLOAD*>(OnUnload);
+	STATIC_DRIVER_OBJECT = driverObject;
+
+	return CPP_MAIN(driverObject, registryPath);
+}

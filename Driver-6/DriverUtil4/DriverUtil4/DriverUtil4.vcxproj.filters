@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Driver Files">
+      <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+    </Filter>
+    <Filter Include="hookx64">
+      <UniqueIdentifier>{3a9ddf7c-923c-4203-a1be-ecf25eb515e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="irpfilter">
+      <UniqueIdentifier>{2e14f617-c31f-4185-849c-468d5b41dd47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{3597318d-9246-45db-9b0e-6c5844f68eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils\include">
+      <UniqueIdentifier>{10aa871b-af75-4eb4-abc9-cd5bafd287dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils\src">
+      <UniqueIdentifier>{e8506862-84ba-43ef-bcbf-bed35c0e66da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils\callback">
+      <UniqueIdentifier>{3f871782-964e-42a6-9280-910fc33d2d57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="MyDriver.inf">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel_stl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdcpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="typeinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="distorm3.cpp">
+      <Filter>hookx64</Filter>
+    </ClCompile>
+    <ClCompile Include="HookX64.cpp">
+      <Filter>hookx64</Filter>
+    </ClCompile>
+    <ClCompile Include="write_jmp.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="util_version.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="util_idt.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="NtReg.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="ntos_util.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="NtFile.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="mem_util.cpp">
+      <Filter>utils\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ddk_stdint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel_stl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scope_exit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdcpp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unique_resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ntos_func_def.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ioctrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_process_callback.h">
+      <Filter>utils\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_thread_callback.h">
+      <Filter>utils\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_image_callback.h">
+      <Filter>utils\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_regcmp_callback.h">
+      <Filter>utils\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_callback.h">
+      <Filter>utils\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_pnp_callback.h">
+      <Filter>utils\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_object_callback.h">
+      <Filter>utils\callback</Filter>
+    </ClInclude>
+    <ClInclude Include="distorm3.hpp">
+      <Filter>hookx64</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="HookX64.h">
+      <Filter>hookx64</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dpc_util.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu_lock.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="lock.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="mem_util.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="NtFile.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ntos_util.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="NtReg.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="timer_ddk.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="util_idt.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="util_nt_file_system.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="util_sleep.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="util_syscall.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="util_time.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="util_version.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="work_item.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="write_jmp.h">
+      <Filter>utils\include</Filter>
+    </ClInclude>
+    <ClInclude Include="native_func_def.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="idthook.asm">
+      <Filter>hookx64</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>
